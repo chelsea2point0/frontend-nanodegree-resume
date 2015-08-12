@@ -154,22 +154,19 @@ function locationizer(work_obj) {
 	return locationArray;
 }
 
-/*
-function inName(name) {
-	name = name.trim().split(" ");
-	console.log(name);
-	name[1] = name[1].toUpperCase();
-	name[0] = name[0].slice(0,1).toUpperCase() + name[0].slice(1).toLowerCase();
+
+function inName() {
+	var nameArray = [];
+	nameArray = name.trim().split(" ");
+	console.log(nameArray);
+	nameArray[1] = nameArray[1].toUpperCase();
+	nameArray[0] = nameArray[0].slice(0,1).toUpperCase() + nameArray[0].slice(1).toLowerCase();
 	
-	return name[0] +" "+ name[1];
+	return nameArray[0] +" "+ nameArray[1];
 }
 
 $("#main").append(internationalizeButton);
-*/
 
-var displayProjects = function() {
-
-}
 
 projects.display = function() {
 	for (project in projects.samples) {
@@ -193,6 +190,8 @@ projects.display = function() {
 		*/
 	}
 };
+
+projects.display();
 
 
 
