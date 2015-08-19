@@ -60,28 +60,28 @@ var work = {
 		"employer": "REB/PAC Business Products",
 		"title": "Web Developer",
 		"dates": "July 2015 - Present",
-		"location": "Weare, NH",
+		"location": "Pine Hill Rd, Weare, NH",
 		"description": "Hired on contractual basis to update client's webpage. Recycled original webpage content but created a more visually appealing, user-friendly version using HTML, CSS, bootstrap and jQuery."
 	},
 	{
 		"employer": "Southern New Hampshire University",
 		"title": "Lead Training Manager",
 		"dates": "September 2014 - June 2015",
-		"location": "Manchester, NH",
+		"location": "South Commercial St, Manchester, NH",
 		"description": "Responsible for managing a team of 5 Training Managers and 1 Quality Assurance Manager for the Academic Advising staff. Designed, developed, and updated training manuals and job aids for both new and current Academic Advisors."
 	},
 	{
 		"employer": "Southern New Hampshire University",
 		"title": "Training Manager",
 		"dates": "July 2013 - August 2014",
-		"location": "Manchester, NH",
+		"location": "South Commercial St, Manchester, NH",
 		"description": "Responsible for design and delivery of onboarding training to all Academic Advising staff. Collaborated with leadership team to ensure that training topics and methods aligned with department goals. Also maintained training materials and created training videos."	
 	},	
 	{
 		"employer": "Southern New Hampshire University",
 		"title": "Academic Advisor",
 		"dates": "June 2012 - July 2013",
-		"location": "Manchester, NH",
+		"location": "South Commercial St, Manchester, NH",
 		"description": "Provided Academic Advising services to new students within Liberal Arts undergraduate degree programs. Recommended and registered students for courses based upon degree requirements. Assisted with study skills and connecting students with academic resources for success."
 	}
 	]
@@ -154,7 +154,6 @@ function locationizer(work_obj) {
 	return locationArray;
 }
 
-
 function inName() {
 	var nameArray = [];
 	nameArray = name.trim().split(" ");
@@ -193,7 +192,8 @@ projects.display = function() {
 
 projects.display();
 
-
+// map
+$("#map-div").append(googleMap);
 
 
 
