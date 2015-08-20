@@ -12,7 +12,7 @@ var bio = {
 	"name" : "Chelsea Schaefer",
 	"role" : "Web Developer",
 	"contacts" : {
-		"cell" : "508-797-2424",
+		"mobile" : "508-797-2424",
 		"email" : "chelseajoyschaefer@gmail.com",
 		"github" : "chelsea2point0",
 		"twitter" : "@chels_schaefer",
@@ -22,7 +22,7 @@ var bio = {
 	"skills" : [
 		"HTML/CSS", " JavaScript", " Training", "Customer Service", "Attention to Detail"
 		],
-	"bioPic" : "images/washington.jpg"
+	"bioPic" : "images/ChelseaSchaefer.jpg"
 };
 
 var education = {
@@ -32,7 +32,7 @@ var education = {
 		"city": "Nashua, NH",
 		"degree": "Certificate",
 		"major": "Internet Application Development",
-		"dates": "September 2015 - December 2015",
+		"dates": "August 2015 - December 2015",
 		"url": "http://www.nashuacc.edu"
 	},
 	{
@@ -111,6 +111,31 @@ var projects = {
 
 };
 
+var formattedPic = HTMLbioPic.replace("%data%", bio.bioPic);
+$("#header").append(formattedPic);
+
+var formattedMessage = HTMLwelcomeMsg.replace("%data%", bio.welcomeMessage);
+$("#header").append(formattedMessage);
+
+
+function displayContacts() {
+	var formattedMobile = HTMLmobile.replace("%data%", bio.contacts.mobile);
+	$("#topContacts, #footerContacts").append(formattedMobile);
+
+	var formattedEmail = HTMLemail.replace("%data%", bio.contacts.email);
+	$("#topContacts, #footerContacts").append(formattedEmail);
+
+	var formattedGitHub = HTMLgithub.replace("%data%", bio.contacts.github);
+	$("#topContacts, #footerContacts").append(formattedGitHub);
+
+	var formattedTwitter = HTMLtwitter.replace("%data%", bio.contacts.twitter);
+	$("#topContacts, #footerContacts").append(formattedTwitter);
+};
+
+displayContacts();
+
+
+
 if (bio.skills.length > 0) {
 	$("#header").append(HTMLskillsStart);
 
@@ -119,6 +144,24 @@ if (bio.skills.length > 0) {
 		$("#skills").append(formattedSkills);
 	}
 };
+
+function displayEducation() {
+for (school in education.schools) {
+	$("#education").append(HTMLschoolStart);
+	var formattedSchoolName = HTMLschoolName.replace("%data%", education.schools[school].name);
+	var formattedSchoolDegree = HTMLschoolDegree.replace("%data%", education.schools[school].degree);
+	var formattedSchoolNameDegree = formattedSchoolName + formattedSchoolDegree;
+	$(".education-entry:last").append(formattedSchoolNameDegree);
+	var formattedSchoolDates = HTMLschoolDates.replace("%data%", education.schools[school].dates);
+	$(".education-entry:last").append(formattedSchoolDates);
+	var formattedSchoolCity = HTMLschoolLocation.replace("%data%", education.schools[school].city);
+	$(".education-entry:last").append(formattedSchoolCity);
+	var formattedSchoolMajor = HTMLschoolMajor.replace("%data%", education.schools[school].major);
+	$(".education-entry:last").append(formattedSchoolMajor);	
+}
+}
+
+displayEducation();
 
 function displayWork() {
 for (job in work.jobs) {
